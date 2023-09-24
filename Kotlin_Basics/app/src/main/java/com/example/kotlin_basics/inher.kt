@@ -1,6 +1,5 @@
 package com.example.kotlin_basics
 
-import android.renderscript.ScriptGroup.Binding
 
 interface Driveable{
     val maxSpeed:Double
