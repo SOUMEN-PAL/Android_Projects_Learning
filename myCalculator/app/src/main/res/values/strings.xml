@@ -10,6 +10,12 @@
     <string name="n8">8</string>
     <string name="n9">9</string>
     <string name="divide">/</string>
-    <string name="mul">X</string>
+    <string name="mul">*</string>
+    <string name="min">-</string>
+    <string name="num0">0</string>
+    <string name="clr">Clr</string>
+    <string name="Plus">+</string>
+    <string name="Equals">=</string>
+    <string name="decimal">.</string>
 
 </resources>
