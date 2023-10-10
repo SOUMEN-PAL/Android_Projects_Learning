@@ -93,7 +93,7 @@
             android:text="@string/divide"
             android:background="@drawable/borders"
             app:backgroundTint="@color/black"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:textSize="25sp"
 
             />
@@ -165,7 +165,7 @@
             android:text="@string/mul"
             android:background="@drawable/borders"
             app:backgroundTint="@color/black"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:textSize="25sp"
 
             />
@@ -237,7 +237,7 @@
             android:text="@string/min"
             android:background="@drawable/borders"
             app:backgroundTint="@color/black"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:textSize="25sp"
 
             />
@@ -294,7 +294,7 @@
             android:background="@drawable/borders"
             app:backgroundTint="@color/black"
             android:textSize="25sp"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
 
 
 
