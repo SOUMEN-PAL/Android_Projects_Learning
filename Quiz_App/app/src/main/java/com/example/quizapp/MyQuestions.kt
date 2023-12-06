@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class MyQuestions : AppCompatActivity() , OnClickListener{
@@ -61,7 +62,7 @@ class MyQuestions : AppCompatActivity() , OnClickListener{
     }
 
     private fun setQuestion() {
-
+        defaultOptionView()
         val question : Question = mQuestionList!![mCurrentPosition - 1]
         ivImage?.setImageResource(question.image)
         progessBar?.progress = mCurrentPosition
@@ -75,9 +76,11 @@ class MyQuestions : AppCompatActivity() , OnClickListener{
 
 
         if(mCurrentPosition == mQuestionList!!.size){
-            btnSubmit?.text = "FINISH"
+            val fin = "FINISH"
+            btnSubmit?.text = fin
         }else{
-            btnSubmit?.text = "SUBMIT"
+            val sub = "SUBMIT"
+            btnSubmit?.text = sub
         }
 
     }
@@ -189,8 +192,27 @@ private fun handleSumbitClick() {
                         mCurrentPosition <= mQuestionList!!.size ->{
                             setQuestion()
                         }
+                        else ->{
+                            Toast.makeText(this , "You have successfully completed the quiz" , Toast.LENGTH_LONG).show()
+                        }
                     }
 
+                }
+                else{
+                    val question = mQuestionList?.get(mCurrentPosition - 1)
+                    if(question!!.correctAnswer != mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition , R.drawable.wrong_option_border)
+                    }
+                    answerView(question.correctAnswer , R.drawable.correct_option_border)
+                    if(mCurrentPosition == mQuestionList!!.size) {
+                        val fin = "FINISH"
+                        btnSubmit?.text = fin
+                    }else{
+                        val sub = "GO TO NEXT QUESTION"
+                        btnSubmit?.text = sub
+                    }
+
+                    mSelectedOptionPosition = 0
                 }
             }
 
